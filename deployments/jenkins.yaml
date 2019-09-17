@@ -1,0 +1,20 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: jenkins-deployment
+  namespace: flux-github
+spec:
+  selector:
+    matchLabels:
+      app: jenkins
+  replicas: 2 
+  template:
+    metadata:
+      labels:
+        app: jenkins
+    spec:
+      containers:
+      - name: jenkins
+        image: jenkins:1.19.0
+        ports:
+        - containerPort: 80
