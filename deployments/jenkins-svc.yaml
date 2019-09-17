@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    flux.weave.works/sync-gc-mark: sha256.u904o2sXQ1RjpEsBqc_RMH6cZ1DgwRpB9u5cLR4w3gQ
+  name: jenkins-svc
+  namespace: flux-github
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+    nodePort: 8080
+  selector:
+    app: jenkins
+  type: NodePort
+status:
+  loadBalancer: {}
