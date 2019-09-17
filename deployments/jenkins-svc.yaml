@@ -8,10 +8,9 @@ metadata:
   namespace: flux-github
 spec:
   ports:
-  - port: 80
+  - port: 8080
     protocol: TCP
-    targetPort: 30001
-    nodePort: 31241
+    targetPort: 8080
   selector:
     app: jenkins
   type: NodePort
