@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: jenkins
-        image: jenkins:1.19.0
+        image: jenkinsci/blueocean:1.19.0
         ports:
         - containerPort: 80
